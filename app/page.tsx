@@ -1,5 +1,7 @@
 import { Navbar } from '@/components/navbar';
+import { ContactForm } from '@/components/contact-form';
 import { WorkSection } from '@/components/work-section';
+import { WhatsAppButton } from '@/components/whatsapp-button';
 import Image from 'next/image';
 
 export default function Home() {
@@ -8,6 +10,7 @@ export default function Home() {
       id="page-scroll"
       className="h-[100dvh] w-full snap-y snap-mandatory overflow-y-auto scroll-smooth bg-white text-black"
     >
+      <WhatsAppButton />
       <section className="flex h-[100dvh] snap-start flex-col" aria-labelledby="home-heading">
         <Navbar />
         <main className="flex flex-1 flex-col items-center justify-center px-6 text-center">
@@ -214,63 +217,7 @@ export default function Home() {
             </p>
           </div>
 
-          <form className="font-[family-name:var(--font-roboto)]">
-            <div className="grid border border-black md:grid-cols-2">
-              <label className="group flex min-h-36 flex-col justify-center border-b border-black px-5 py-6 md:border-b-0 md:border-r sm:px-8">
-                <span className="mb-3 text-xs uppercase tracking-[0.08em] text-black/55">
-                  Email
-                </span>
-                <input
-                  type="email"
-                  name="email"
-                  required
-                  placeholder="your@email.com"
-                  className="w-full bg-transparent text-lg outline-none placeholder:text-black/55"
-                />
-              </label>
-              <label className="flex min-h-36 flex-col justify-center px-5 py-6 sm:px-8">
-                <span className="mb-3 text-xs uppercase tracking-[0.08em] text-black/55">
-                  Phone number
-                </span>
-                <input
-                  type="tel"
-                  name="phone"
-                  placeholder="+977 98 0000 0000"
-                  className="w-full bg-transparent text-lg outline-none placeholder:text-black/55"
-                />
-              </label>
-              <label className="flex min-h-44 flex-col justify-center border-t border-black px-5 py-6 md:col-span-2 sm:px-8">
-                <span className="mb-3 text-xs uppercase tracking-[0.08em] text-black/55">
-                  Message
-                </span>
-                <textarea
-                  name="message"
-                  required
-                  rows={2}
-                  placeholder="Tell me a little about your project..."
-                  className="w-full resize-none bg-transparent text-lg outline-none placeholder:text-black/55"
-                />
-              </label>
-              <button
-                type="submit"
-                className="group flex min-h-28 items-center justify-between border-t border-black px-5 text-left text-lg transition-colors hover:bg-black hover:text-[#fcff35] md:col-span-2 sm:px-8"
-              >
-                Send message
-                <span
-                  className="text-2xl transition-transform group-hover:translate-x-2"
-                  aria-hidden="true"
-                >
-                  ↗
-                </span>
-              </button>
-            </div>
-            <div className="flex flex-col justify-between gap-4 pt-3 font-[family-name:var(--font-roboto)] text-xs uppercase leading-tight sm:flex-row">
-              <p>Enter your email or phone number so I can reply.</p>
-              <p className="max-w-[290px] sm:text-right">
-                I&apos;ll only use your details to respond to your message.
-              </p>
-            </div>
-          </form>
+          <ContactForm />
         </div>
       </section>
 
